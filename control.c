@@ -12,9 +12,13 @@
 #include "stuff.h"
 
 
+void print_help();
+
+
 int main(int argc, char *argv[]) {
     if (argc < 2) {
         printf("control: one command line argument required, none provided\n");
+        print_help();
         return EXIT_FAILURE;
     }
 
@@ -95,5 +99,20 @@ int main(int argc, char *argv[]) {
     }
 
     printf("control: %s argument not recognized\n", argv[1]);
+    print_help();
     return EXIT_FAILURE;
+}
+
+
+void print_help() {
+    printf("\ncontrol: controller for semaphone game\n");
+    printf("Usage:\n");
+    printf("\tcontrol <args>\n");
+    printf("\nArguments:\n");
+    printf("\t-c --create\n");
+    printf("\t\tSet the game up. Creates all files and setup necessary\n");
+    printf("\n");
+    printf("\t-r --remove\n");
+    printf("\t\tCloses the game. Removes all necessary game setup, but leaves the game file intact.\n");
+    printf("\t\tPrints out the game log.\n");
 }
