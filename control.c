@@ -87,6 +87,7 @@ int main(int argc, char *argv[]) {
             return errno;
         }
 
+        printf("Your total game log:\n");
         printf("%s\n", contents);
         close(file);
         
